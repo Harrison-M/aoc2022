@@ -5,7 +5,7 @@
 
 use std::io;
 
-pub use anyhow::{Context, Error};
+pub use anyhow::{anyhow, bail, Context, Error};
 
 /// Read stdin into a string
 pub fn read_stdin() -> Result<String, io::Error> {
