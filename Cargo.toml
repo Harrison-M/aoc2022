@@ -2,5 +2,6 @@
 
 members = [
     "day*",
+    "point_2d",
     "util"
 ]
