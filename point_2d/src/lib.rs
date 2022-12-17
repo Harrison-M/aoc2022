@@ -140,6 +140,14 @@ impl<T: Div<T, Output = T> + Copy> DivAssign<T> for Point2D<T> {
     }
 }
 
+impl<T: Copy + Signed> Point2D<T> {
+    /// Determine the "manhattan distance" between two points, that is, the sum of the absolute
+    /// values of the coordinates' distance from one another.
+    pub fn manhattan_distance(&self, other: &Self) -> T {
+        (self.0 - other.0).abs() + (self.1 - other.1).abs()
+    }
+}
+
 impl<T: PrimInt + Signed> Point2D<T> {
     /// Given the point is part of a discrete grid, find the adjacent points.
     /// "Adjacent" here is considered to be the points in both the cardinal and
